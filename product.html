@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+</head>
+<body>
+  <button onclick="show()">Show Product</button>  
+</body>
+</html>
+<script>
+    function show(){
+  let products=[
+    {
+      "id": 1,
+      "name": "biba",
+      "price": 3000,
+      "currency": "rs",
+      "available_qty":4
+    },
+    {
+      "id": 2,
+      "name": "W",
+      "price": 2000,
+      "currency": "rs",
+      "available_qty":14
+    },
+    {
+      "id": 3,
+      "name": "Zara",
+      "price": 9000,
+      "currency": "rs",
+      "available_qty":2
+    }
+  ]
+ // console.log(products)
+ let arr=localStorage.getItem("products");
+ let i=1;
+          if (arr == null){
+              arr=[];
+          }
+          else{
+              arr=JSON.parse(arr);
+          }
+          arr.push(products);
+         // console.log(arr);
+         localStorage.setItem("products",JSON.stringify(arr));
+         console.log(arr);
+         i++;
+         console.log("index",i)
+        }
+       
+
+
+</script>
